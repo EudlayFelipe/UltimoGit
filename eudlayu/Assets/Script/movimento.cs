@@ -62,6 +62,10 @@ public class movimento : MonoBehaviour
     public Texture2D cursorTexture;
     Vector2 cursorHotspot;
 
+    [Header("Perguntas")]
+    public GameObject painelPergunta;
+    bool colidindoPergunta;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -110,18 +114,16 @@ public class movimento : MonoBehaviour
             if (pausado == false)
             {
                 painelPause.SetActive(true);
-                pausado = true;
-                Cursor.visible = true;
+                Cursor.visible = true;                            
                 Time.timeScale = 0;
-                
+                pausado = true;
             }
-            else if(pausado == true)
+            else if(pausado == true )
             {
                 painelPause.SetActive(false);
-                pausado = false;
-                Cursor.visible = false;
+                Cursor.visible = false;                            
                 Time.timeScale = 1;
-                
+                pausado = false;
             }
 
         }
@@ -198,12 +200,36 @@ public class movimento : MonoBehaviour
         {
             animMonstro.GetComponent<Animator>().SetBool("playerPerto", false);
         } 
+       if(coll.gameObject.tag == "Pergunta1")
+        {
+            if(colidindoPergunta == false)
+            {
+                painelPergunta.SetActive(true);
+                colidindoPergunta = true;
+                Time.timeScale = 0;
+                Cursor.visible = true;
+            }
+            
+        }
     }
-   
+
+    public void FecharPainelPerguntas()
+    {
+        if(colidindoPergunta == true)
+        {
+            painelPause.SetActive(false);
+            Cursor.visible = false;
+            colidindoPergunta = false;
+            Time.timeScale = 1;
+            
+        }
+       
+    }
+
     void Atirar()
     {
-        Instantiate(projetil,posTiro.transform.position, Quaternion.identity);
-        projetil.GetComponent<Rigidbody>().AddForce(Vector3.one, ForceMode.Impulse);
+        Instantiate(projetil,posTiro.transform.position, posTiro.transform.rotation);
+        projetil.GetComponent<Rigidbody>().AddForce(Vector3.forward, ForceMode.Impulse);
     }
 }
 
