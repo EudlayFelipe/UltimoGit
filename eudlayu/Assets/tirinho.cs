@@ -17,17 +17,19 @@ public class tirinho : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         transform.Translate(Vector3.back * speed * Time.deltaTime);
+         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         
     }
-    private void OnTriggerEnter(Collider other)
+   
+
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "torre")
+        if (other.gameObject.tag == "torre")
         {
             Destroy(gameObject, 0.1f);
             Destroy(this.gameObject);
         }
-        if(other.gameObject.tag == "Aranha")
+        if (other.gameObject.tag == "Aranha")
         {
             Destroy(gameObject);
             Destroy(other.gameObject);

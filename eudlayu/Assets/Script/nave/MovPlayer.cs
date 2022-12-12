@@ -42,6 +42,13 @@ namespace Geral
         public GameObject imagem;
         bool informando;
 
+        public GameObject fade;
+        public GameObject fadeOut;
+
+        private void Awake()
+        {
+            fade.SetActive(true);
+        }
         void Start()
         {
             gravity = GetComponent<Rigidbody>();
@@ -64,8 +71,9 @@ namespace Geral
         {
             if (coll.gameObject.CompareTag("planeta"))
             {
-             SceneManager.LoadScene("SampleScene 1");
-                Cursor.visible = false;
+                StartCoroutine(fadeOutSair());
+              
+                
             }
         }
 
@@ -94,6 +102,14 @@ namespace Geral
                     informando = false;
                 }
             }
+        }
+        IEnumerator fadeOutSair()
+        {
+            
+            fadeOut.SetActive(true);
+            yield return new WaitForSeconds(4);
+            SceneManager.LoadScene("SampleScene 1");
+            Cursor.visible = false;
         }
         #region
         void MovePlayer()

@@ -13,6 +13,11 @@ TagManager:
   - Aranha
   - torre
   - Pergunta1
+  - tiro
+  - Pergunta2
+  - Pergunta3
+  - dois
+  - tres
   layers:
   - Default
   - TransparentFX

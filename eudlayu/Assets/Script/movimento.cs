@@ -48,7 +48,7 @@ public class movimento : MonoBehaviour
     public GameObject cristal2;
     public GameObject cristal3;
     public TextMeshProUGUI numeroDeCristais;
-    float contarCristais;
+    public float contarCristais;
 
     [Header("Pause")]
     public GameObject painelPause;
@@ -63,8 +63,17 @@ public class movimento : MonoBehaviour
     Vector2 cursorHotspot;
 
     [Header("Perguntas")]
-    public GameObject painelPergunta;
+    public GameObject painelPergunta, painelPergunta2, painelPergunta3;
     bool colidindoPergunta;
+    Perguntas perg;
+
+    [Header("Fade In")]
+    public GameObject fadeInImage;
+
+    private void Awake()
+    {
+        fadeInImage.SetActive(true);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +84,7 @@ public class movimento : MonoBehaviour
         speed = baseSpeed;
         Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
         Cursor.visible = false;
+        perg = FindObjectOfType(typeof(Perguntas))  as Perguntas;
         
     }
 
@@ -127,16 +137,14 @@ public class movimento : MonoBehaviour
             }
 
         }
- /* if(vida = 0)
-    {
-         painelGO.SetActive(true);
-         Time.timeScale = 0;
-    }
 
- */
-    }
-
-
+        if(perg.contResp == 3)
+        {
+            cristal1.SetActive(true);
+            cristal2.SetActive(true);
+            cristal3.SetActive(true);
+        }
+    }   
     public void MovimentacaoPlayer()
     {
         float x = Input.GetAxis("Horizontal"); //controle horizontal
@@ -210,6 +218,28 @@ public class movimento : MonoBehaviour
                 Cursor.visible = true;
             }
             
+        }
+        if (coll.gameObject.tag == "dois")
+        {
+            if (colidindoPergunta == false)
+            {
+                painelPergunta2.SetActive(true);
+                colidindoPergunta = true;
+                Time.timeScale = 0;
+                Cursor.visible = true;
+            }
+
+        }
+        if (coll.gameObject.tag == "tres")
+        {
+            if (colidindoPergunta == false)
+            {
+                painelPergunta3.SetActive(true);
+                colidindoPergunta = true;
+                Time.timeScale = 0;
+                Cursor.visible = true;
+            }
+
         }
     }
 

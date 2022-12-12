@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CenasDoJogo/GameOver.unity
     guid: ca6b8234cb47285419e8c11f247a5a56
+  - enabled: 1
+    path: Assets/Scenes/CenasDoJogo/inciioo.unity
+    guid: 31481aedcce1c534b8eba1347c102e4d
   m_configObjects: {}

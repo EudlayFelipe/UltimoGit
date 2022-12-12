@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 9094642672676127760}
   - component: {fileID: 3225260527275406071}
   - component: {fileID: 5075498287193179633}
+  - component: {fileID: 6286739022857980442}
+  - component: {fileID: -2818041661710089456}
   m_Layer: 0
   m_Name: Projetil 1
-  m_TagString: Untagged
+  m_TagString: tiro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3531859579954313807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 580.32745, y: 0.21649142, z: 371.78857}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 3.4673135, y: 3.4673135, z: 3.4673135}
   m_Children:
   - {fileID: 8809043439903165949}
   m_Father: {fileID: 0}
@@ -63,6 +65,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   player: {fileID: 0}
+--- !u!64 &6286739022857980442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531859579954313807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!136 &-2818041661710089456
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531859579954313807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.56552076
+  m_Height: 1.1310415
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.06552074}
 --- !u!1 &6524557236953122621
 GameObject:
   m_ObjectHideFlags: 0
