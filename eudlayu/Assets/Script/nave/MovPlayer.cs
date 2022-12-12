@@ -45,6 +45,7 @@ namespace Geral
         public GameObject fade;
         public GameObject fadeOut;
         bool parado;
+        public GameObject fadeCanvas;
         private void Awake()
         {
             fade.SetActive(true);
@@ -108,6 +109,7 @@ namespace Geral
             forwardSpeed = 0;
             hoverSpeed = 0;
             strafeSpeed = 0;
+            fadeCanvas.SetActive(true);
             fadeOut.SetActive(true);
             yield return new WaitForSeconds(4);
             SceneManager.LoadScene("SampleScene 1");

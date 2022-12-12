@@ -70,6 +70,10 @@ public class movimento : MonoBehaviour
     [Header("Fade In")]
     public GameObject fadeInImage;
 
+    public GameObject PerguntasCertas;
+
+   
+
     private void Awake()
     {
         fadeInImage.SetActive(true);
@@ -85,7 +89,7 @@ public class movimento : MonoBehaviour
         Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
         Cursor.visible = false;
         perg = FindObjectOfType(typeof(Perguntas))  as Perguntas;
-        
+      
     }
 
     // Update is called once per frame
@@ -216,6 +220,7 @@ public class movimento : MonoBehaviour
                 colidindoPergunta = true;
                 Time.timeScale = 0;
                 Cursor.visible = true;
+                
             }
             
         }

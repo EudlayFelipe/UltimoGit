@@ -10,16 +10,22 @@ public class Perguntas : MonoBehaviour
 
     private movimento movePlayer;
 
+    public GameObject Cristal;
+
     // Start is called before the first frame update
     void Start()
     {
-        movePlayer = FindObjectOfType(typeof(movimento)) as movimento;  
+        movePlayer = FindObjectOfType(typeof(movimento)) as movimento;
+        Cristal.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(contResp == 3)
+        {
+            Cristal.SetActive(true);
+        }
     }
 
     public void fecharPergunta1()
@@ -87,5 +93,7 @@ public class Perguntas : MonoBehaviour
             Time.timeScale = 1;
             Cursor.visible = false;      
     }
+
+
   
 }
