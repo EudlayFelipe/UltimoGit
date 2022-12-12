@@ -44,7 +44,7 @@ namespace Geral
 
         public GameObject fade;
         public GameObject fadeOut;
-
+        bool parado;
         private void Awake()
         {
             fade.SetActive(true);
@@ -105,7 +105,9 @@ namespace Geral
         }
         IEnumerator fadeOutSair()
         {
-            
+            forwardSpeed = 0;
+            hoverSpeed = 0;
+            strafeSpeed = 0;
             fadeOut.SetActive(true);
             yield return new WaitForSeconds(4);
             SceneManager.LoadScene("SampleScene 1");
@@ -142,15 +144,22 @@ namespace Geral
             {
                 forwardSpeed -= 600;
             }
-            if(Input.GetAxisRaw("Vertical") != 0)
-            {
-                Part3.SetActive(true);
+         /*   if(Input.GetAxisRaw("Vertical") != 0)
+            {              
+                Part3.SetActive(true);                               
             }
             else
             {
                 Part3.SetActive(false);
+            }*/
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Part3.SetActive(true);
             }
-
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                Part3.SetActive(false);
+            }
         }
 
         void lightSpeed()

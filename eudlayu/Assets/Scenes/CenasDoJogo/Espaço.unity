@@ -5420,7 +5420,7 @@ MonoBehaviour:
   Part3: {fileID: 537016012}
   cursorTex: {fileID: 2800000, guid: 3b6f8beaf492a82449ffe29cdb3acab0, type: 3}
   imagem: {fileID: 896837829}
-  fade: {fileID: 1349023988}
+  fade: {fileID: 742255490}
   fadeOut: {fileID: 947015127}
 --- !u!4 &622070999 stripped
 Transform:
@@ -5474,7 +5474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &742255491
 RectTransform:
   m_ObjectHideFlags: 0
